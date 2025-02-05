@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="UberEatsClone.Views.BrowsePage"
+             Title="Browse"
+             BackgroundColor="#FFF3E0">
+    <!-- Soft orange for warmth -->
+
+    <VerticalStackLayout Padding="20" VerticalOptions="FillAndExpand">
+
+        <!-- UberEats Logo -->
+        <Image Source="ubereats_logo.png"
+               HeightRequest="200"
+               HorizontalOptions="Center"
+               Margin="0,40,0,20"/>
+
+        <Label Text="Browse Restaurants" FontSize="24" FontAttributes="Bold" HorizontalOptions="Center"/>
+
+        <ListView ItemsSource="{Binding Restaurants}" VerticalOptions="FillAndExpand">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <HorizontalStackLayout Spacing="10">
+                            <Image Source="{Binding Image}" WidthRequest="50" HeightRequest="50"/>
+                            <VerticalStackLayout>
+                                <Label Text="{Binding Name}" FontSize="18" FontAttributes="Bold"/>
+                                <Label Text="{Binding Description}" FontSize="14"/>
+                            </VerticalStackLayout>
+                        </HorizontalStackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+
+    </VerticalStackLayout>
+</ContentPage>
